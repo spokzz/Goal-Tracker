@@ -12,7 +12,9 @@
 		56241E391FD406CA00C1A828 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E381FD406CA00C1A828 /* GoalType.swift */; };
 		56241E401FD4115B00C1A828 /* UiViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E3F1FD4115B00C1A828 /* UiViewExt.swift */; };
 		56241E431FD419D600C1A828 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E421FD419D600C1A828 /* FinishGoalVC.swift */; };
+		562D5CE51FD831F600B51393 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 562D5CE41FD831F500B51393 /* Media.xcassets */; };
 		563E66DB1FD4344400F8C352 /* customizeUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563E66DA1FD4344400F8C352 /* customizeUIButton.swift */; };
+		567CDA6C1FD6BA590087F64A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567CDA6B1FD6BA590087F64A /* UIViewControllerExt.swift */; };
 		56E127981FD3E45500B8877F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E127971FD3E45500B8877F /* AppDelegate.swift */; };
 		56E1279A1FD3E45500B8877F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E127991FD3E45500B8877F /* HomeVC.swift */; };
 		56E1279D1FD3E45500B8877F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E1279B1FD3E45500B8877F /* Main.storyboard */; };
@@ -28,7 +30,9 @@
 		56241E381FD406CA00C1A828 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
 		56241E3F1FD4115B00C1A828 /* UiViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExt.swift; sourceTree = "<group>"; };
 		56241E421FD419D600C1A828 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
+		562D5CE41FD831F500B51393 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		563E66DA1FD4344400F8C352 /* customizeUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customizeUIButton.swift; sourceTree = "<group>"; };
+		567CDA6B1FD6BA590087F64A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		56E127941FD3E45500B8877F /* Goal Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Goal Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E127971FD3E45500B8877F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E127991FD3E45500B8877F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -63,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				56241E3F1FD4115B00C1A828 /* UiViewExt.swift */,
+				567CDA6B1FD6BA590087F64A /* UIViewControllerExt.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -90,22 +95,15 @@
 				56241E371FD406BA00C1A828 /* Enumeration */,
 				56E127AE1FD3E4D800B8877F /* Controller */,
 				56E127AD1FD3E4D400B8877F /* View */,
-				56E127AC1FD3E4CF00B8877F /* Model */,
 				56E127971FD3E45500B8877F /* AppDelegate.swift */,
 				56E1279B1FD3E45500B8877F /* Main.storyboard */,
 				56E127A11FD3E45500B8877F /* Assets.xcassets */,
+				562D5CE41FD831F500B51393 /* Media.xcassets */,
 				56E127A31FD3E45500B8877F /* LaunchScreen.storyboard */,
 				56E127A61FD3E45500B8877F /* Info.plist */,
 				56E1279E1FD3E45500B8877F /* Goal_Tracker.xcdatamodeld */,
 			);
 			path = "Goal Tracker";
-			sourceTree = "<group>";
-		};
-		56E127AC1FD3E4CF00B8877F /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		56E127AD1FD3E4D400B8877F /* View */ = {
@@ -189,6 +187,7 @@
 			files = (
 				56E127A51FD3E45500B8877F /* LaunchScreen.storyboard in Resources */,
 				56E127A21FD3E45500B8877F /* Assets.xcassets in Resources */,
+				562D5CE51FD831F600B51393 /* Media.xcassets in Resources */,
 				56E1279D1FD3E45500B8877F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -201,6 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56E127B01FD3E50E00B8877F /* customizeUIVIew.swift in Sources */,
+				567CDA6C1FD6BA590087F64A /* UIViewControllerExt.swift in Sources */,
 				56241E391FD406CA00C1A828 /* GoalType.swift in Sources */,
 				56241E361FD4060200C1A828 /* CreateGoalVC.swift in Sources */,
 				56E1279A1FD3E45500B8877F /* HomeVC.swift in Sources */,
@@ -349,7 +349,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUBNSGSGKR;
 				INFOPLIST_FILE = "Goal Tracker/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Spokhrel.Goal-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,7 +365,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUBNSGSGKR;
 				INFOPLIST_FILE = "Goal Tracker/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Spokhrel.Goal-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";

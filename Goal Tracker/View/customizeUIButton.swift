@@ -13,26 +13,26 @@ import UIKit
 class customizeUIButton: UIButton {
     
 
+    //First color of color gradient
     @IBInspectable var firstColor: UIColor = UIColor.clear {
         didSet {
             updateView()
         }
     }
     
+    //Second color of color gradient
     @IBInspectable var secondColor: UIColor = UIColor.clear {
         didSet {
             updateView()
         }
     }
     
-    
+    //Corner Radius:
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }
     }
-    
-    
     
     func updateView() {
         
@@ -45,7 +45,6 @@ class customizeUIButton: UIButton {
         self.layer.insertSublayer(gradientLayer, at: 0)
         self.layer.masksToBounds = true //It will allow corner Radius to set.
     }
-
 
 }
 

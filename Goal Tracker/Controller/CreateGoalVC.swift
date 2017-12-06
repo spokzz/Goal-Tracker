@@ -23,63 +23,68 @@ class CreateGoalVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         goalDescriptionTextView.delegate = self
-        changeButtonColor(buttonPressed: shortTermButton)
         nextButton.bindToKeyboard()
+        addSingleTap()
+        addSwipeGesture()
 
     }
     
+    //When Short Term Button is Pressed:
     @IBAction func shortTermButtonPressed(_ sender: customizeUIButton) {
         
         goalTypeSelected = .shortTerm
-        changeButtonColor(buttonPressed: shortTermButton)
-        
     }
-    
+
+    //When Long Term Button is Pressed:
     @IBAction func longTermButtonPressed(_ sender: customizeUIButton) {
         
         goalTypeSelected = .longTerm
-        changeButtonColor(buttonPressed: longTermButton)
-        
     }
     
-    @IBAction func nextButtonPressed(_ sender: UIButton) {
+    //When NEXT button is pressed:
+    @IBAction func nextButtonPressed(_ sender: customizeUIButton) {
         
         if goalDescriptionTextView.text != "" && goalDescriptionTextView.text != "What's your goal?" {
             
            guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "finishGoalVC") as? FinishGoalVC else {return }
             finishGoalVC.initData(goalDescription: goalDescriptionTextView.text!, goalType: goalTypeSelected)
-            present(finishGoalVC, animated: true, completion: nil)
+            presentViewController(finishGoalVC)
         }
         
     }
     
+    //When Back Button is Pressd:
     @IBAction func backButtonPressed(_ sender: UIButton) {
         
-        dismiss(animated: true, completion: nil)
+        dismissViewController()
+    }
+    
+    //It will add a tap Gesture on Main View. (single Tap)
+    func addSingleTap() {
+        
+        let singleTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardOnSingleTap))
+        singleTap.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(singleTap)
         
     }
     
-    //It will change the button based on the user Selection.
-    func changeButtonColor(buttonPressed: UIButton) {
-        
-        if buttonPressed == shortTermButton {
-            self.shortTermButton.firstColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
-            self.shortTermButton.secondColor = #colorLiteral(red: 0.4215020537, green: 0.5612378716, blue: 0.9383363724, alpha: 1)
-            self.longTermButton.firstColor = UIColor.clear
-            self.longTermButton.secondColor = UIColor.clear
-            self.longTermButton.backgroundColor = #colorLiteral(red: 0.4215020537, green: 0.5612378716, blue: 0.9383363724, alpha: 1)
-        }
-        
-        else if buttonPressed == longTermButton {
-            self.longTermButton.firstColor = #colorLiteral(red: 0, green: 0.5694751143, blue: 1, alpha: 1)
-            self.longTermButton.secondColor = #colorLiteral(red: 0.4215020537, green: 0.5612378716, blue: 0.9383363724, alpha: 1)
-            self.shortTermButton.firstColor = UIColor.clear
-            self.shortTermButton.secondColor = UIColor.clear
-            self.shortTermButton.backgroundColor = #colorLiteral(red: 0.4215020537, green: 0.5612378716, blue: 0.9383363724, alpha: 1)
-        }
+    //It is called when user taps on a screen.
+    @objc func dismissKeyboardOnSingleTap() {
+        goalDescriptionTextView.resignFirstResponder()
     }
     
+    //It will add swipe gesture on main screen (right)
+    func addSwipeGesture() {
+        
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swippedLeftOnScreen))
+        rightSwipe.direction = .right
+        self.view.addGestureRecognizer(rightSwipe)
+    }
     
+    //It will called when user swipped on a screen
+    @objc func swippedLeftOnScreen() {
+        dismissViewController()
+    }
 
 }
 
@@ -88,7 +93,7 @@ extension CreateGoalVC: UITextViewDelegate {
     //When user press the text Field: 
     func textViewDidBeginEditing(_ textView: UITextView) {
         goalDescriptionTextView.text = ""
-        goalDescriptionTextView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        goalDescriptionTextView.textColor = #colorLiteral(red: 0.09411764706, green: 0.09803921569, blue: 0.09803921569, alpha: 1)
         
     }
     
