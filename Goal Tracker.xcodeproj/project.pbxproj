@@ -10,11 +10,18 @@
 		56241E341FD3F78D00C1A828 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E331FD3F78D00C1A828 /* HomeCell.swift */; };
 		56241E361FD4060200C1A828 /* CreateGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E351FD4060200C1A828 /* CreateGoalVC.swift */; };
 		56241E391FD406CA00C1A828 /* GoalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E381FD406CA00C1A828 /* GoalType.swift */; };
-		56241E401FD4115B00C1A828 /* UiViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E3F1FD4115B00C1A828 /* UiViewExt.swift */; };
 		56241E431FD419D600C1A828 /* FinishGoalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56241E421FD419D600C1A828 /* FinishGoalVC.swift */; };
 		562D5CE51FD831F600B51393 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 562D5CE41FD831F500B51393 /* Media.xcassets */; };
 		563E66DB1FD4344400F8C352 /* customizeUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 563E66DA1FD4344400F8C352 /* customizeUIButton.swift */; };
+		56556C611FDFE63500CB3F73 /* CompletedGoalsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56556C601FDFE63500CB3F73 /* CompletedGoalsCell.swift */; };
+		567A8E951FDEC40500754DFE /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567A8E941FDEC40500754DFE /* HistoryVC.swift */; };
 		567CDA6C1FD6BA590087F64A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567CDA6B1FD6BA590087F64A /* UIViewControllerExt.swift */; };
+		5681BD121FE7C74900AA7C7A /* SideViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5681BD111FE7C74900AA7C7A /* SideViewCell.swift */; };
+		56C041501FDCFAA500B94AEB /* MyProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C0414F1FDCFAA500B94AEB /* MyProfileVC.swift */; };
+		56C041541FDD091900B94AEB /* customizeUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C041531FDD091900B94AEB /* customizeUITextField.swift */; };
+		56CEFD001FDE89B800ACD796 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 56CEFCFF1FDE89B700ACD796 /* SWRevealViewController.m */; };
+		56CEFD021FDE8C4000ACD796 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CEFD011FDE8C4000ACD796 /* MenuVC.swift */; };
+		56CEFD041FDE98C800ACD796 /* EditProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CEFD031FDE98C800ACD796 /* EditProfileVC.swift */; };
 		56E127981FD3E45500B8877F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E127971FD3E45500B8877F /* AppDelegate.swift */; };
 		56E1279A1FD3E45500B8877F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E127991FD3E45500B8877F /* HomeVC.swift */; };
 		56E1279D1FD3E45500B8877F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E1279B1FD3E45500B8877F /* Main.storyboard */; };
@@ -22,17 +29,30 @@
 		56E127A21FD3E45500B8877F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56E127A11FD3E45500B8877F /* Assets.xcassets */; };
 		56E127A51FD3E45500B8877F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56E127A31FD3E45500B8877F /* LaunchScreen.storyboard */; };
 		56E127B01FD3E50E00B8877F /* customizeUIVIew.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E127AF1FD3E50E00B8877F /* customizeUIVIew.swift */; };
+		56EFFD211FDBEF1A00625A82 /* customizeUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EFFD201FDBEF1A00625A82 /* customizeUIImageView.swift */; };
+		56EFFD251FDC07E000625A82 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EFFD241FDC07E000625A82 /* DataService.swift */; };
+		56EFFD291FDC083B00625A82 /* SideViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56EFFD281FDC083B00625A82 /* SideViewModel.swift */; };
+		56F3351D1FDC4CD200F7E085 /* HelpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F3351C1FDC4CD200F7E085 /* HelpVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		56241E331FD3F78D00C1A828 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		56241E351FD4060200C1A828 /* CreateGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGoalVC.swift; sourceTree = "<group>"; };
 		56241E381FD406CA00C1A828 /* GoalType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalType.swift; sourceTree = "<group>"; };
-		56241E3F1FD4115B00C1A828 /* UiViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExt.swift; sourceTree = "<group>"; };
 		56241E421FD419D600C1A828 /* FinishGoalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishGoalVC.swift; sourceTree = "<group>"; };
 		562D5CE41FD831F500B51393 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		563E66DA1FD4344400F8C352 /* customizeUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customizeUIButton.swift; sourceTree = "<group>"; };
+		56556C601FDFE63500CB3F73 /* CompletedGoalsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletedGoalsCell.swift; sourceTree = "<group>"; };
+		567A8E941FDEC40500754DFE /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		567CDA6B1FD6BA590087F64A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		5681BD111FE7C74900AA7C7A /* SideViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideViewCell.swift; sourceTree = "<group>"; };
+		56C0414F1FDCFAA500B94AEB /* MyProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileVC.swift; sourceTree = "<group>"; };
+		56C041531FDD091900B94AEB /* customizeUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customizeUITextField.swift; sourceTree = "<group>"; };
+		56CEFCFD1FDE89B700ACD796 /* Goal Tracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Goal Tracker-Bridging-Header.h"; sourceTree = "<group>"; };
+		56CEFCFE1FDE89B700ACD796 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		56CEFCFF1FDE89B700ACD796 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		56CEFD011FDE8C4000ACD796 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		56CEFD031FDE98C800ACD796 /* EditProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileVC.swift; sourceTree = "<group>"; };
 		56E127941FD3E45500B8877F /* Goal Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Goal Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E127971FD3E45500B8877F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56E127991FD3E45500B8877F /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -42,6 +62,10 @@
 		56E127A41FD3E45500B8877F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		56E127A61FD3E45500B8877F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56E127AF1FD3E50E00B8877F /* customizeUIVIew.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customizeUIVIew.swift; sourceTree = "<group>"; };
+		56EFFD201FDBEF1A00625A82 /* customizeUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customizeUIImageView.swift; sourceTree = "<group>"; };
+		56EFFD241FDC07E000625A82 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		56EFFD281FDC083B00625A82 /* SideViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideViewModel.swift; sourceTree = "<group>"; };
+		56F3351C1FDC4CD200F7E085 /* HelpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,10 +90,19 @@
 		56241E3C1FD4110F00C1A828 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				56241E3F1FD4115B00C1A828 /* UiViewExt.swift */,
 				567CDA6B1FD6BA590087F64A /* UIViewControllerExt.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		56CEFCFC1FDE899900ACD796 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				56CEFCFE1FDE89B700ACD796 /* SWRevealViewController.h */,
+				56CEFCFF1FDE89B700ACD796 /* SWRevealViewController.m */,
+				56CEFCFD1FDE89B700ACD796 /* Goal Tracker-Bridging-Header.h */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		56E1278B1FD3E45500B8877F = {
@@ -91,6 +124,9 @@
 		56E127961FD3E45500B8877F /* Goal Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				56CEFCFC1FDE899900ACD796 /* Supporting Files */,
+				56EFFD261FDC07FC00625A82 /* DataService */,
+				56EFFD271FDC082100625A82 /* Model */,
 				56241E3C1FD4110F00C1A828 /* Extension */,
 				56241E371FD406BA00C1A828 /* Enumeration */,
 				56E127AE1FD3E4D800B8877F /* Controller */,
@@ -111,7 +147,11 @@
 			children = (
 				56E127AF1FD3E50E00B8877F /* customizeUIVIew.swift */,
 				56241E331FD3F78D00C1A828 /* HomeCell.swift */,
+				5681BD111FE7C74900AA7C7A /* SideViewCell.swift */,
 				563E66DA1FD4344400F8C352 /* customizeUIButton.swift */,
+				56EFFD201FDBEF1A00625A82 /* customizeUIImageView.swift */,
+				56C041531FDD091900B94AEB /* customizeUITextField.swift */,
+				56556C601FDFE63500CB3F73 /* CompletedGoalsCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -119,11 +159,32 @@
 		56E127AE1FD3E4D800B8877F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				56CEFD011FDE8C4000ACD796 /* MenuVC.swift */,
 				56E127991FD3E45500B8877F /* HomeVC.swift */,
 				56241E351FD4060200C1A828 /* CreateGoalVC.swift */,
 				56241E421FD419D600C1A828 /* FinishGoalVC.swift */,
+				567A8E941FDEC40500754DFE /* HistoryVC.swift */,
+				56F3351C1FDC4CD200F7E085 /* HelpVC.swift */,
+				56C0414F1FDCFAA500B94AEB /* MyProfileVC.swift */,
+				56CEFD031FDE98C800ACD796 /* EditProfileVC.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		56EFFD261FDC07FC00625A82 /* DataService */ = {
+			isa = PBXGroup;
+			children = (
+				56EFFD241FDC07E000625A82 /* DataService.swift */,
+			);
+			path = DataService;
+			sourceTree = "<group>";
+		};
+		56EFFD271FDC082100625A82 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				56EFFD281FDC083B00625A82 /* SideViewModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +219,7 @@
 				TargetAttributes = {
 					56E127931FD3E45500B8877F = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,17 +261,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56EFFD211FDBEF1A00625A82 /* customizeUIImageView.swift in Sources */,
+				56CEFD001FDE89B800ACD796 /* SWRevealViewController.m in Sources */,
+				56EFFD251FDC07E000625A82 /* DataService.swift in Sources */,
 				56E127B01FD3E50E00B8877F /* customizeUIVIew.swift in Sources */,
+				56CEFD041FDE98C800ACD796 /* EditProfileVC.swift in Sources */,
 				567CDA6C1FD6BA590087F64A /* UIViewControllerExt.swift in Sources */,
+				56EFFD291FDC083B00625A82 /* SideViewModel.swift in Sources */,
 				56241E391FD406CA00C1A828 /* GoalType.swift in Sources */,
 				56241E361FD4060200C1A828 /* CreateGoalVC.swift in Sources */,
+				56CEFD021FDE8C4000ACD796 /* MenuVC.swift in Sources */,
 				56E1279A1FD3E45500B8877F /* HomeVC.swift in Sources */,
-				56241E401FD4115B00C1A828 /* UiViewExt.swift in Sources */,
+				56F3351D1FDC4CD200F7E085 /* HelpVC.swift in Sources */,
+				56C041501FDCFAA500B94AEB /* MyProfileVC.swift in Sources */,
 				563E66DB1FD4344400F8C352 /* customizeUIButton.swift in Sources */,
 				56E127981FD3E45500B8877F /* AppDelegate.swift in Sources */,
+				56C041541FDD091900B94AEB /* customizeUITextField.swift in Sources */,
 				56E127A01FD3E45500B8877F /* Goal_Tracker.xcdatamodeld in Sources */,
+				567A8E951FDEC40500754DFE /* HistoryVC.swift in Sources */,
 				56241E341FD3F78D00C1A828 /* HomeCell.swift in Sources */,
+				56556C611FDFE63500CB3F73 /* CompletedGoalsCell.swift in Sources */,
 				56241E431FD419D600C1A828 /* FinishGoalVC.swift in Sources */,
+				5681BD121FE7C74900AA7C7A /* SideViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +419,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUBNSGSGKR;
 				INFOPLIST_FILE = "Goal Tracker/Info.plist";
@@ -353,6 +427,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Spokhrel.Goal-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Goal Tracker/Supporting Files/Goal Tracker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -362,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DUBNSGSGKR;
 				INFOPLIST_FILE = "Goal Tracker/Info.plist";
@@ -369,6 +446,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Spokhrel.Goal-Tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Goal Tracker/Supporting Files/Goal Tracker-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

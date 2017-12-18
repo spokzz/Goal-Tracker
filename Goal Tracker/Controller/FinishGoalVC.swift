@@ -11,11 +11,19 @@ import CoreData
 
 class FinishGoalVC: UIViewController {
 
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var calendarViewHeight: NSLayoutConstraint!
+    
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var selectedDateLabel: UILabel!
     @IBOutlet weak var longTermDateOptionsView: UIStackView!
     @IBOutlet weak var shortTermDateOptionsView: UIView!
     
+    @IBOutlet weak var calendarView: customizeUIVIew!
+    
+    var goalsCreated = UserDefaults.standard.integer(forKey: "totalGoalsCreated")
+    var goalOnProgress = UserDefaults.standard.integer(forKey: "goalOnProgress")
     
     var goalDescription = String()
     var goalType = String()
@@ -24,42 +32,47 @@ class FinishGoalVC: UIViewController {
     var selectedDate: Date?
     
     
-    //It will return us seven days from today's date.
+    //RETURN (7)
     var sevenDaysfromNow: Date {
         return Calendar.current.date(byAdding: .weekOfYear, value: 1, to: Date())!
     }
     
-    //It will return us year from today's date.
+    //RETURN (365) OR (year)
     var yearFromNow: Date {
         return Calendar.current.date(byAdding: .year, value: 1, to: Date())!
     }
     
-    //It will return us 15 days from today's date.
+    //RETURN (15)
     var day_15_FromNow: Date {
         return Calendar.current.date(byAdding: .day, value: 15, to: Date())!
     }
     
-    //It will return us a month from today's date.
+    //RETURN MONTH
     var monthFromNow: Date {
         return Calendar.current.date(byAdding: .month, value: 1, to: Date())!
     }
     
-    //It will return us two days from today's date.
+    //RETURN (2)
     var day_2_FromNow: Date {
         return Calendar.current.date(byAdding: .day, value: 2, to: Date())!
     }
     
-    
+    //VIEW DID LOAD:
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        getDeviceModel()
 
         datePicker.minimumDate = Date()
         dateFormatter.dateFormat = "MMM d, yyyy"
         datePicker.addTarget(self, action: #selector(datePickerValueChanged(_:)), for: .valueChanged)
         addSwipeGesture()
         
+        calendarView.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        
     }
     
+    //VIEW WILL APPEAR:
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if goalType == "Short Term" {
@@ -71,11 +84,30 @@ class FinishGoalVC: UIViewController {
             datePicker.maximumDate = yearFromNow
             longTermDateOptionsView.isHidden = false
             shortTermDateOptionsView.isHidden = true
-            
         }
+        
+        
     }
     
-    //It will get data from CreateGoalVC.
+    //GETS THE DEVICE MODEL AND UPDATE THE TOP VIEW CONSTRATINT.
+    func getDeviceModel() {
+        
+        switch deviceType! {
+        case "iphone 8":
+            topViewHeight.constant = 70
+            calendarViewHeight.constant = 250
+        case "iphone 8 Plus":
+            topViewHeight.constant = 70
+        case "iphone X":
+            topViewHeight.constant = 90
+        default:
+            print("nothing")
+            return
+        }
+        
+    }
+    
+    //GET DATA FROM CREATEGOALVC
     func initData(goalDescription: String, goalType type: GoalType) {
         
         self.goalDescription = goalDescription
@@ -83,25 +115,26 @@ class FinishGoalVC: UIViewController {
         
     }
     
-    //When date Picker value will be changed, it is called.
+    //DATE PICKER VALUE IS CHANGED:
    @objc func datePickerValueChanged(_ sender: UIDatePicker) {
     
-        selectedDateLabel.isHidden = false
+        selectedDateLabel.textColor = #colorLiteral(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)
         selectedDate = sender.date
         selectedDateLabel.text = "Selected Date: \(dateFormatter.string(from: selectedDate!))"
         
     }
 
-    //When backButton will be pressed, it will be called.
+    //BACK BUTTON PRESSED:
     @IBAction func backButtonPressed(_ sender: UIButton) {
         
         dismissViewController()
         
     }
     
-    //When user pressed custom date (like 15 days or month)
+    //USER CHOOSE CUSTOM DATE: (shortcut button like 2 days or 1 month. )
     @IBAction func customButtonPressed(_ sender: UIButton) {
         
+        selectedDateLabel.textColor = #colorLiteral(red: 0.25, green: 0.25, blue: 0.25, alpha: 1)
         
         switch sender.currentTitle! {
         case "15 days":
@@ -125,43 +158,58 @@ class FinishGoalVC: UIViewController {
         
     }
     
-    //When createGoalButton will be Pressed, it will be called.
+    
+    //CREATE GOAL BUTTON PRESSED:
     @IBAction func createGoalButtonPressed(_ sender: UIButton) {
         
-        if selectedDate != nil {
+        if selectedDate != nil && selectedDateLabel.text != "Selected Date: \(dateFormatter.string(from: Date()))" {
             saveData { (success) in
                 if success {
-                    guard let homeVC = self.storyboard?.instantiateViewController(withIdentifier: "homeVC") else {return }
-                    self.rootVC(viewController: homeVC)
+                   
+                    guard let swRevealViewController = self.storyboard?.instantiateViewController(withIdentifier: "SWRevealViewController") else {return }
+                    self.present(swRevealViewController, animated: false, completion: nil)
+                    
+                    UserDefaults.standard.set(self.goalsCreated + 1, forKey: "totalGoalsCreated")
+                    UserDefaults.standard.set(self.goalOnProgress + 1, forKey: "goalOnProgress")
+                    
                 } else {
                     print("Error in saving data.")
                 }
             }
         } else {
-            print("Date not selected.")
-            //Do the Alert Action
+            addAlert()
         }
+    }
+    
+    //ADD ALERT (if user didn't select a date.)
+    func addAlert() {
         
-        
+        let alert = UIAlertController(title: nil, message: "Till which date you wanna do your goal?", preferredStyle: .alert)
+        let alertAction = UIAlertAction(title: "Choose a Date", style: .default, handler: nil)
+        alert.addAction(alertAction)
+        present(alert, animated: true, completion: nil)
         
     }
     
-    //It will add swipe gesture on main screen (right)
+    //ADD SWIPE GESTURE (RIGHT)
     func addSwipeGesture() {
         
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swippedLeftOnScreen))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swippedRightOnScreen))
         rightSwipe.direction = .right
         self.view.addGestureRecognizer(rightSwipe)
     }
     
-    //It will called when user swipped on a screen
-    @objc func swippedLeftOnScreen() {
+    //USER SWIPPED ON A SCREEN
+    @objc func swippedRightOnScreen() {
         dismissViewController()
     }
     
+    
+    
 }
 
-//Core Data: Saving Data
+//CORE DATA:
+//SAVING DATA:
  extension FinishGoalVC {
         
         //It will save Data in CoreDataModel.
@@ -188,11 +236,6 @@ class FinishGoalVC: UIViewController {
         }
         
     }
-
-
-
-
-
 
 
 

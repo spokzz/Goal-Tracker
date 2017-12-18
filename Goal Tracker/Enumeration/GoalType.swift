@@ -8,7 +8,7 @@
 
 import Foundation
 
-//It's for a Goal Type.
+//GOAL TYPE:
 enum GoalType: String {
     
     case shortTerm = "Short Term"

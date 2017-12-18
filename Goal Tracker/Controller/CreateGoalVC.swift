@@ -10,38 +10,58 @@ import UIKit
 
 class CreateGoalVC: UIViewController {
 
+    @IBOutlet weak var topViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var goalDescriptionTextView: UITextView!
     @IBOutlet weak var shortTermButton: customizeUIButton!
     @IBOutlet weak var longTermButton: customizeUIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    @IBOutlet weak var GoalTextBackgroundView: customizeUIVIew!
     
-    
-    //When view will load, it will be selected to short Term Button.
     var goalTypeSelected: GoalType = .shortTerm
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+         getDeviceModel()
+        
         goalDescriptionTextView.delegate = self
-        nextButton.bindToKeyboard()
         addSingleTap()
         addSwipeGesture()
+        
+        GoalTextBackgroundView.layer.shadowOffset = CGSize(width: 0, height: 0)
 
     }
     
-    //When Short Term Button is Pressed:
+    func getDeviceModel() {
+        
+        switch deviceType! {
+        case "iphone 8":
+            topViewHeight.constant = 70
+        case "iphone 8 Plus":
+            topViewHeight.constant = 70
+        case "iphone X":
+            topViewHeight.constant = 90
+        default:
+            print("nothing")
+            return
+        }
+    }
+    
+    //SHORT TERM BUTTON PRESSED:
     @IBAction func shortTermButtonPressed(_ sender: customizeUIButton) {
         
         goalTypeSelected = .shortTerm
     }
 
-    //When Long Term Button is Pressed:
+    //LONG TERM BUTTON PRESSED:
     @IBAction func longTermButtonPressed(_ sender: customizeUIButton) {
         
         goalTypeSelected = .longTerm
     }
     
-    //When NEXT button is pressed:
+    //NEXT BUTTON PRESSED:
     @IBAction func nextButtonPressed(_ sender: customizeUIButton) {
         
         if goalDescriptionTextView.text != "" && goalDescriptionTextView.text != "What's your goal?" {
@@ -53,13 +73,13 @@ class CreateGoalVC: UIViewController {
         
     }
     
-    //When Back Button is Pressd:
+    //BACK BUTTON PRESSED:
     @IBAction func backButtonPressed(_ sender: UIButton) {
         
         dismissViewController()
     }
     
-    //It will add a tap Gesture on Main View. (single Tap)
+    //ADD A TAP GESTURE. (single Tap)
     func addSingleTap() {
         
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboardOnSingleTap))
@@ -68,12 +88,12 @@ class CreateGoalVC: UIViewController {
         
     }
     
-    //It is called when user taps on a screen.
+    //USER TAPPED ON A SCREEN
     @objc func dismissKeyboardOnSingleTap() {
         goalDescriptionTextView.resignFirstResponder()
     }
     
-    //It will add swipe gesture on main screen (right)
+    //ADD SWIPE GESTURE (right)
     func addSwipeGesture() {
         
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(swippedLeftOnScreen))
@@ -81,7 +101,7 @@ class CreateGoalVC: UIViewController {
         self.view.addGestureRecognizer(rightSwipe)
     }
     
-    //It will called when user swipped on a screen
+    //USER SWIPPED ON SCREEN.
     @objc func swippedLeftOnScreen() {
         dismissViewController()
     }
@@ -90,12 +110,21 @@ class CreateGoalVC: UIViewController {
 
 extension CreateGoalVC: UITextViewDelegate {
     
-    //When user press the text Field: 
+    //WHEN TEXT VIEW IS PRESSED:
     func textViewDidBeginEditing(_ textView: UITextView) {
         goalDescriptionTextView.text = ""
         goalDescriptionTextView.textColor = #colorLiteral(red: 0.09411764706, green: 0.09803921569, blue: 0.09803921569, alpha: 1)
         
     }
+    
+    //DISMISS THE KEYBOARD WITH DONE BUTTON.
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if (text == "\n") {
+            goalDescriptionTextView.resignFirstResponder()
+        }
+        return true
+    }
+    
     
     
 }

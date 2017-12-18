@@ -8,6 +8,9 @@
 
 import UIKit
 import CoreData
+import UserNotifications
+
+var deviceType: String?
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,7 +19,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+       
+        checkSizeOfPhone()
+        
+        
         return true
     }
 
@@ -88,6 +94,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
+    
+    //IT WILL RETURN US THE DEVICE MODEL BASED ON A HEIGHT.
+    func checkSizeOfPhone() {
+        
+        if UIDevice().userInterfaceIdiom == .phone {
+            
+            switch UIScreen.main.nativeBounds.height {
+                
+                
+            case 2208.0:
+                deviceType = "iphone 8 Plus"
+            case 2436.0:
+                deviceType = "iphone X"
+            default:
+                deviceType = "iphone 8"
+            }
+        }
+    }
+    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

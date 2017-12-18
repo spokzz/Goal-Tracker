@@ -12,21 +12,21 @@ import UIKit
 
 class customizeUIVIew: UIView {
     
-    //First Color for Color Gradient.
+    //COLOR GRADIENT (FIRST COLOR)
     @IBInspectable var firstColor: UIColor = UIColor.clear {
         didSet {
             updateView()
         }
     }
     
-    //Second Color for Color Gradient.
+    //COLOR GRADIENT (SECOND COLOR)
     @IBInspectable var secondColor: UIColor = UIColor.clear {
         didSet {
             updateView()
         }
     }
     
-    //Shadow Color of a view.
+    //SHADOW COLOR
     @IBInspectable var shadowColor: UIColor = UIColor.clear {
         didSet {
             self.layer.shadowColor = shadowColor.cgColor
@@ -34,7 +34,7 @@ class customizeUIVIew: UIView {
         }
     }
     
-    //Shadow Opacity:
+    //SHADOW OPACITY:
     @IBInspectable var shadowOpacity: Float = 0 {
         didSet {
             self.layer.shadowOpacity = shadowOpacity
@@ -42,31 +42,33 @@ class customizeUIVIew: UIView {
         }
     }
     
-    //Shadow Radius:
+    //SHADOW RADIUS:
     @IBInspectable var shadowRadius: CGFloat = 0 {
         didSet{
             self.layer.shadowRadius = shadowRadius
         }
     }
     
-   /* @IBInspectable var cornerRadius: CGFloat = 0 {
+    //CORNER RADIUS
+    @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }
     }
     
+    //BORDER WIDTH
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
             self.layer.borderWidth = borderWidth
         }
     }
     
+    //BORDER COLOR
     @IBInspectable var borderColor: UIColor = UIColor.clear {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
-    } */
-    
+    } 
     
     override class var layerClass: AnyClass {
         get {
